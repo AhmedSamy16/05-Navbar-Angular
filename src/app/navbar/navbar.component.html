@@ -1,0 +1,18 @@
+
+<nav>
+    <div class="nav-logo">
+        <h1>Angular</h1>
+        <img src="assets/angular.png" alt="React" class="react-icon">
+    </div>
+    <div class="menu-icon" (click)="handleClick()">
+        <img src="{{ isClicked ? closeIcon : menuIcon }}" alt="{{ isClicked ? 'close' : 'menu' }}" [ngClass]="isClicked ? 'close' : ''">
+    </div>
+    <ul class="nav-menu" [ngClass]="{ 'active': isClicked }">
+        <li *ngFor="let t of items">
+            <a [href]="t.url" [ngClass]="t.cName">{{ t.title }}</a>
+        </li>
+    </ul>
+    <button class="btn">
+        Sign in
+    </button>
+</nav>
